@@ -6,6 +6,7 @@ pipeline {
         GIT_REPO = 'https://github.com/anijumech/product.git'
         GIT_CREDENTIALS_ID = 'anbanerj'  // Use Jenkins credentials
         RELEASE_BRANCH = 'release-${env.BUILD_NUMBER}' // Release branch naming convention
+        BRANCH_NAME = 'main' 
     }
 
     stages {
@@ -13,7 +14,7 @@ pipeline {
             steps {
                 script {
                     // Checkout code from Git repository
-                    git credentialsId: "${GIT_CREDENTIALS_ID}", url: "${GIT_REPO}"
+                    git credentialsId: "${GIT_CREDENTIALS_ID}", url: "${GIT_REPO}", branch: "${BRANCH_NAME}" 
                 }
             }
         }
