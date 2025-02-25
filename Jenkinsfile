@@ -5,7 +5,7 @@ pipeline {
         // Define your repository details
         GIT_REPO = 'https://github.com/anijumech/product.git'
         GIT_CREDENTIALS_ID = 'anbanerj'  // Use Jenkins credentials
-        RELEASE_BRANCH = 'release-${BUILD_NUMBER}' // Release branch naming convention
+        RELEASE_BRANCH = 'release-' + "${BUILD_NUMBER}" // Release branch naming convention
         BRANCH_NAME = 'main' 
     }
 
